@@ -15,7 +15,7 @@ document.querySelectorAll('.toggle-button').forEach(button => {
   
   
   hamburger.addEventListener('click', () => {
-    console.log('click')
+
     navMenu.classList.add('responsive');
   });
 
