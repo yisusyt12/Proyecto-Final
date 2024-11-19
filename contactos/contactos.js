@@ -10,4 +10,19 @@ document.querySelectorAll('.toggle-button').forEach(button => {
       }
     });
   });
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('navMenu');
+  
+  
+  hamburger.addEventListener('click', () => {
+    console.log('click')
+    navMenu.classList.add('responsive');
+  });
+
+
+  navMenu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      navMenu.classList.remove('responsive');
+    }
+  });
   

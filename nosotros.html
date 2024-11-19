@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -100,36 +99,94 @@
             margin: 0;
             color: #bbb; 
           }
-          
+          .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #1c1c1c;
+          }
+          .navbar-brand img {
+            width: 100px;
+          }
+          .nav-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          .nav-menu a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+          }
+          .nav-menu a:hover, .nav-menu a.active {
+            color: #1e90ff;
+          }     
+            
+   .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+
+  .nav-menu.responsive {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #1c1c1c;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  .nav-menu.responsive a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+    .nav-menu {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+  
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo" width="100">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="file:///c%3A/Users/Jesus%20Rivera%20Gomez/Desktop/Parcial1-html/index/index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contactos</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike Logo">
+    </a>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#" >Inicio</a></li>
+      <li><a href="#">Productos</a></li>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">Contactos</a></li>
+    </ul>
+  </nav>
       <section>
     <div class="container">
         <div class="header">
@@ -163,6 +220,21 @@
             </div>
         </div>
     </div>
+    <script>
+      
+  hamburger.addEventListener('click', () => {
+    console.log('click')
+    navMenu.classList.add('responsive');
+  });
+
+  
+  navMenu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      navMenu.classList.remove('responsive');
+    }
+  });
+  
+    </script>
     <footer>
         <div class="footer-content">
           <p class="footer-developers">
