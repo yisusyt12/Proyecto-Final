@@ -143,13 +143,12 @@
       const hamburger = document.getElementById('hamburger');
       const navMenu = document.getElementById('navMenu');
       
-      // Función para alternar la clase responsive
       hamburger.addEventListener('click', () => {
         console.log('click')
         navMenu.classList.add('responsive');
       });
   
-      // Opcional: Cierra el menú al seleccionar un enlace
+
       navMenu.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
           navMenu.classList.remove('responsive');
