@@ -1,0 +1,8 @@
+const isRining = false
+
+isRining ? console.log("Esta lloviendo. "): console.log("No esta lloviendo")
+
+let myname = "jesus"
+
+let greeting = "Hola mi nombre es " + myname + "!"
+console.log(greeting)
