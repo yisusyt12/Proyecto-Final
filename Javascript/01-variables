@@ -6,3 +6,20 @@ let myname = "jesus"
 
 let greeting = "Hola mi nombre es " + myname + "!"
 console.log(greeting)
+
+
+let mi_nombre = 'Rivera'
+
+let saludo = `Hola, Mi nombre es ${mi_nombre}! `
+
+console.log(saludo)
+
+let edad = 60
+
+if(edad >= 18 && edad <= 59 ){
+    console.log("Usted es Mayor de edad.")
+}
+else if(edad >= 60){
+    console.log("Usted es señor Mayor.")
+}
+else((edad < 18 ), console.log("Usted es menor de edad"))
